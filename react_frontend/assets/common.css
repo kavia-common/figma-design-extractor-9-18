@@ -1,0 +1,196 @@
+:root {
+  /* Color tokens (subset used on Splash Screen) */
+  --color-ffffff: #ffffff;
+  --color-000000: #000000;
+  --color-129575: #129575;
+  --color-d9d9d9: #d9d9d9;
+
+  /* Typography tokens mapped from design system */
+  /* typo_55: Poppins 18/600/27 center white */
+  --typo-55-family: "Poppins", Arial, sans-serif;
+  --typo-55-size: 18px;
+  --typo-55-weight: 600;
+  --typo-55-line: 27px;
+  --typo-55-align: center;
+  --typo-55-color: var(--color-ffffff);
+
+  /* typo_56: Poppins 50/600/60 center white */
+  --typo-56-family: "Poppins", Arial, sans-serif;
+  --typo-56-size: 50px;
+  --typo-56-weight: 600;
+  --typo-56-line: 60px;
+  --typo-56-align: center;
+  --typo-56-color: var(--color-ffffff);
+
+  /* typo_57: Poppins 16/400/24 center white */
+  --typo-57-family: "Poppins", Arial, sans-serif;
+  --typo-57-size: 16px;
+  --typo-57-weight: 400;
+  --typo-57-line: 24px;
+  --typo-57-align: center;
+  --typo-57-color: var(--color-ffffff);
+
+  /* typo_58: Poppins 16/600/24 center white */
+  --typo-58-family: "Poppins", Arial, sans-serif;
+  --typo-58-size: 16px;
+  --typo-58-weight: 600;
+  --typo-58-line: 24px;
+  --typo-58-align: center;
+  --typo-58-color: var(--color-ffffff);
+
+  /* Style tokens */
+  --radius-10: 10px;
+  --radius-100: 100px;
+
+  /* Layout */
+  --screen-w: 375px;
+  --screen-h: 812px;
+
+  /* Shadows (none required for this screen) */
+}
+
+/* Normalize and base */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--color-ffffff);
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Typography helpers */
+.typo-55 {
+  font-family: var(--typo-55-family);
+  font-size: var(--typo-55-size);
+  font-weight: var(--typo-55-weight);
+  line-height: var(--typo-55-line);
+  text-align: var(--typo-55-align);
+  color: var(--typo-55-color);
+}
+.typo-56 {
+  font-family: var(--typo-56-family);
+  font-size: clamp(32px, 8vw, var(--typo-56-size));
+  font-weight: var(--typo-56-weight);
+  line-height: clamp(40px, 9.6vw, var(--typo-56-line));
+  text-align: var(--typo-56-align);
+  color: var(--typo-56-color);
+  white-space: pre-line; /* allows line break as in Figma "Get\nCooking" */
+}
+.typo-57 {
+  font-family: var(--typo-57-family);
+  font-size: var(--typo-57-size);
+  font-weight: var(--typo-57-weight);
+  line-height: var(--typo-57-line);
+  text-align: var(--typo-57-align);
+  color: var(--typo-57-color);
+}
+.typo-58 {
+  font-family: var(--typo-58-family);
+  font-size: var(--typo-58-size);
+  font-weight: var(--typo-58-weight);
+  line-height: var(--typo-58-line);
+  text-align: var(--typo-58-align);
+  color: var(--typo-58-color);
+}
+
+/* Button base from style_11 (background color color_129575, radius 10) */
+.btn-primary {
+  background: var(--color-129575);
+  color: var(--color-ffffff);
+  border: none;
+  border-radius: var(--radius-10);
+  height: 54px; /* as per Figma */
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary:focus {
+  outline: 2px solid rgba(255,255,255,0.6);
+  outline-offset: 2px;
+}
+
+/* iOS home indicator shape (style_17: white with radius 100) */
+.home-indicator {
+  width: 135px;
+  height: 5px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-100);
+  margin: 0 auto;
+  opacity: 1;
+}
+
+/* Utility containers */
+.screen-frame {
+  position: relative;
+  width: min(100vw, var(--screen-w));
+  height: min(100vh, var(--screen-h));
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 0; /* style_10 notes radius 30, but overall frame visually full-bleed; keeping 0 for web */
+}
+
+/* Full-bleed background image */
+.screen-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Status bar mimic (dark mode variant visuals, simplified) */
+.status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center the time text */
+  color: var(--color-ffffff);
+  font-family: "SF Pro Display", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.165px;
+  text-shadow: 0 0 1px rgba(0,0,0,0.35); /* ensure visibility if bg is light */
+}
+
+/* Bottom safe area for home indicator */
+.safe-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Accessibility helpers */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .brand-title {
+    margin-top: 8px;
+  }
+  .typo-57 {
+    font-size: 15px;
+  }
+}

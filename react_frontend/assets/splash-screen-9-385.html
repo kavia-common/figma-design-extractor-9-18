@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Splash Screen - 9:385</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./common.css" />
+  <link rel="stylesheet" href="./splash-screen-9-385.css" />
+  <style>
+    /* Inline to ensure the background image files are clarified if not yet copied locally */
+  </style>
+</head>
+<body>
+  <div class="screen-frame splash">
+    <div class="screen-bg" role="img" aria-label="Background image of food and cooking"></div>
+
+    <!-- Status bar (dark mode style) -->
+    <div class="status-bar" aria-hidden="true">
+      <div class="time">19:27</div>
+    </div>
+
+    <div class="content-wrap">
+      <!-- Top text group -->
+      <section class="text-group" aria-label="Intro">
+        <h1 class="title typo-56">Get
+Cooking</h1>
+        <p class="caption typo-57">Simple way to find Tasty Recipe</p>
+      </section>
+
+      <!-- Middle brand block -->
+      <section class="brand-block" aria-label="Brand highlight">
+        <div class="brand-logo" role="img" aria-label="App brand logo"></div>
+        <div class="brand-title typo-55">100K+ Premium Recipe</div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <button class="btn-primary typo-58" data-action="start-cooking" aria-label="Start Cooking">
+          <span>Start Cooking</span>
+          <i class="icon-arrow" aria-hidden="true"></i>
+        </button>
+      </section>
+    </div>
+
+    <!-- Home indicator -->
+    <div class="safe-bottom" aria-hidden="true">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
